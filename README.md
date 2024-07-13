@@ -9,7 +9,7 @@ https://github.com/Ital023/UrlShortener-Backend-br/archive/refs/heads/master.zip
 
 ## :rocket: Sobre o desafio
 
-**Desafio: Encurtador de URLs**
+**Desafio: Encurtador de URLs** <br><br> [Link do desafio](https://github.com/backend-br/desafios/blob/master/url-shortener/PROBLEM.md)
 
 **Objetivo:** Implementar um serviço que transforma URLs longas em URLs compactas e fáceis de compartilhar.
 
