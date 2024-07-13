@@ -8,11 +8,10 @@ import io.github.ital023.urlshortener.service.UrlService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
@@ -31,7 +30,13 @@ public class UrlController {
         return ResponseEntity.ok(responseDTO);
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<Void> redirect (@PathVariable("id") String id){
 
+        HttpHeaders httpHeaders = urlService.redirect(id);
+
+        return ResponseEntity.status(HttpStatus.FOUND).headers(httpHeaders).build();
+    }
 
 
 }
